@@ -1,0 +1,12 @@
+header.header{
+    background-color: #F2BE22;
+    background:linear-gradient(135deg,#b99119 0%,#F2BE22 100% );
+    padding: 0 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: var(--shadow);
+}
+
+header.header h1{
+    font-size: 1.8em;
+}

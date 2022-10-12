@@ -1,0 +1,8 @@
+footer.footer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 25px;
+    background:linear-gradient(135deg,#b99119 0%,#F2BE22 100% );
+    box-shadow: var(--shadow);
+}
