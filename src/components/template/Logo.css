@@ -8,3 +8,9 @@ aside.logo img{
     padding: 0px 0px 0px 20px;
     width: 80%;
 }
+
+@media (max-width: 580px) {
+    aside.logo img{
+        width: 150px;
+    }
+}

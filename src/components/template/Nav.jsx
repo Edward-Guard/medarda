@@ -1,24 +1,16 @@
 import './Nav.css'
 import React from 'react'
+import Navegacao from '../template/Links'
 
 export default props =>
-<aside className="menu-area">
-    <nav className='menu'>
-        <a href="/">
-            <i className='fa fa-home'></i>Inicio
-        </a>
-        <a href="fa fa-users">
-            <i className='fa fa-users'></i>Promoções
-        </a>
-        <a href="fa fa-users">
-            <i className='fa fa-sign-in'></i>Login
-            {/* fa fa-sign-out log-out */}
-        </a>
-        <a href="fa fa-users">
-            <i className='fa fa-info-circle'></i>Ajuda
-        </a>
-        <a href="fa fa-users">
-            <i className='fa fa-phone'></i>Contato
-        </a>
-    </nav>
-</aside>
+    <aside className="menu-area">
+        <nav className='menu'>
+            
+            <Navegacao caminho='/' icone='home' titulo='Medarda'/>
+            <Navegacao caminho='viagens' icone='sign-in' titulo='Login'/>
+            <Navegacao caminho='promocoes' icone='plane' titulo='Promoções'/>
+            <Navegacao caminho='users' icone='info-circle' titulo='Ajuda'/>
+            <Navegacao caminho='viagens' icone='phone' titulo='Contato'/>
+            
+        </nav>
+    </aside>
