@@ -7,7 +7,8 @@ export default props =>
         <nav className='menu'>
             
             <Navegacao caminho='/' icone='home' titulo='Medarda'/>
-            <Navegacao caminho='viagens' icone='sign-in' titulo='Login'/>
+            <Navegacao caminho='login' icone='sign-in' titulo='Login'/>
+            <Navegacao caminho='viagens' icone='plane' titulo='Viagens'/>
             <Navegacao caminho='promocoes' icone='plane' titulo='Promoções'/>
             <Navegacao caminho='users' icone='info-circle' titulo='Ajuda'/>
             <Navegacao caminho='viagens' icone='phone' titulo='Contato'/>
