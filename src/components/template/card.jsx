@@ -7,7 +7,7 @@ export default props =>
         <div className="card-body">
             <h5 className="card-title">{props.titulo}</h5>
             <p className="card-text">{props.texto}</p>
-            <a href="#" class="btn btn-primary">Viajar  </a>
+            <a href="/viagens" class="btn btn-primary text-white white" tabindex="-1" role="button" aria-disabled="true">Viajar</a>
         </div>
     </div>
 

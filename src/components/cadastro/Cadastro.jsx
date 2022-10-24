@@ -1,7 +1,7 @@
 import React,{ Component } from "react";
 import axios from 'axios'
 import Main from "../template/Main";
-import './CadastroViagens.css'
+
 
 const headerProps = {
     icon: 'plane',
@@ -9,13 +9,13 @@ const headerProps = {
     subtitle: 'Cadastro de viagens'
 }
 
-const baseUrl= 'http://localhost:3001/users'
+const baseUrl= 'http://localhost:3001/viagens'
 const initiaState={
-    user: {name: '',email:'',cpf:''},
+    viagens: {id: '',cp:'',origem:'',destino:'',passageiros:''},
     list: []
 }
 
-export default class CadastroViagens extends Component{
+export default class passagens extends Component{
 
     state = {...initiaState}
 
@@ -26,69 +26,82 @@ export default class CadastroViagens extends Component{
     }
 
     clear(){
-        this.setState({user: initiaState.user})
+        this.setState({viagens: initiaState.viagens})
     }
     // Incluir-Post(Usuario sem id) Alterar-Put(Id setado)
     save(){
-        const user = this.state.user
-        const method= user.id ? 'put' : 'post'
-        const url = user.id ? `${baseUrl}/${user.id}` : baseUrl
-        axios[method](url,user)
+        const viagens = this.state.viagens
+        const method= viagens.id ? 'put' : 'post'
+        const url = viagens.id ? `${baseUrl}/${viagens.id}` : baseUrl
+        axios[method](url,viagens)
             .then(resp => {
                 const list = this.getUpdatedList(resp.data)
-                this.setState({user:initiaState.user,list})
+                this.setState({viagens:initiaState.viagens,list})
+                // Reseta todos os campos para o initial state após um save correto
             })
     }
 
-    getUpdatedList(user,add=true){
-        const list = this.state.list.filter(u=> u.id !== user.id) 
+    getUpdatedList(viagens,add=true){
+        const list = this.state.list.filter(u=> u.id !== viagens.id) 
         // filtrando a lista 
-        if(add) list.unshift(user)
+        if(add) list.unshift(viagens)
         // adciona o usuario na primeira posição
         return list
     }
 
     updateField(event){
-        const user = { ...this.state.user }
-        user[event.target.name] = event.target.value
-        this.setState({user})
+        // Modificar o campo ao ocorrer um evento 'e'
+        const viagens = { ...this.state.viagens }
+        // Começa inserindo um estado inicial vazio indicado pelo inititalState
+        viagens[event.target.name] = event.target.value
+        // Pega o evento do campo pelo name e insere o valor neste campo
+        this.setState({viagens})
     }
 
     renderForm(){
         return(
             <div className="form">
                 <div className="row">
+                <div className="col-12 col-md-6">
+                        <div className="form-group">
+                            <label>CP</label>
+                            <input type="text" className="form-control" 
+                             name="cp"
+                             value={this.state.viagens.cp}
+                             onChange={e => this.updateField(e)}
+                             placeholder="Código do Passageiro..."/>
+                        </div>
+                    </div>
                     <div className="col-12 col-md-6">
                         <div className="form-group">
-                            <label>Nome</label>
+                            <label>Origem</label>
                             <input type="text" className="form-control" 
-                             name="name"
-                             value={this.state.user.name}
+                             name="origem"
+                             value={this.state.viagens.origem}
                              onChange={e => this.updateField(e)}
-                             placeholder="Digite um nome..."/>
+                             placeholder="Informe sua Origem..."/>
                         </div>
                     </div>
 
                     <div className="col-12 col-md-6">
                         <div className="form-group">
-                            <label>E-mail</label>
+                            <label>Destino</label>
                             <input type="text" className="form-control" 
-                             name="email"
-                             value={this.state.user.email}
+                             name="destino"
+                             value={this.state.viagens.destino}
                              onChange={e => this.updateField(e)}
-                             placeholder="Digite um E-mail..."/>
+                             placeholder="Para onde vai viajar?..."/>
                         </div>
                     </div>
 
-
                     <div className="col-12 col-md-6">
                         <div className="form-group">
-                            <label>CPF</label>
+                            <label>Passageiros</label>
                             <input type="text" className="form-control" 
-                             name="cpf"
-                             value={this.state.user.cpf}
+                             name="passageiros"
+                             value={this.state.viagens.passageiros}
                              onChange={e => this.updateField(e)}
-                             placeholder="Digite um CPF..."/>
+                             placeholder="Quantos irão viajar?..."/>
                         </div>
                     </div>
                 </div>
@@ -110,14 +123,14 @@ export default class CadastroViagens extends Component{
         )
     }
 
-    load(user){
-        this.setState({user})
+    load(viagens){
+        this.setState({viagens})
 
     }
 
-    remove(user) {
-        axios.delete(`${baseUrl}/${user.id}`).then(resp => {
-            const list = this.getUpdatedList(user, false)
+    remove(viagens) {
+        axios.delete(`${baseUrl}/${viagens.id}`).then(resp => {
+            const list = this.getUpdatedList(viagens, false)
             this.setState({ list })
         })
     }
@@ -130,9 +143,9 @@ export default class CadastroViagens extends Component{
                 <thead>
                     <tr>
                         <th>CP</th>
-                        <th>Nome</th>
-                        <th>E-mail</th>
-                        <th>CPF</th>
+                        <th>Origem</th>
+                        <th>Destino</th>
+                        <th>Passageiros</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -144,20 +157,20 @@ export default class CadastroViagens extends Component{
     }
 
     renderRows(){
-        return this.state.list.map(user =>{
+        return this.state.list.map(viagens =>{
             return(
-                <tr key={user.id}>
-                    <td>{user.id}</td>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                    <td>{user.cpf}</td>
+                <tr key={viagens.id}>
+                    <td>{viagens.cp}</td>
+                    <td>{viagens.origem}</td>
+                    <td>{viagens.destino}</td>
+                    <td>{viagens.passageiros}</td>        
                     <td>
                         <button className="btn btn-warning"
-                            onClick={() => this.load(user)}>
+                            onClick={() => this.load(viagens)}>
                             <i className="fa fa-pencil"></i>
                         </button>
                         <button className="btn btn-danger ml-2"
-                            onClick={() => this.remove(user)}>
+                            onClick={() => this.remove(viagens)}>
                             <i className="fa fa-trash"></i>
                         </button>
                     </td>
