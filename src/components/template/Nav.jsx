@@ -6,7 +6,7 @@ export default props =>
     <aside className="menu-area">
         <nav className='menu'>
             
-            <Navegacao caminho='/' icone='home' titulo='Medarda'/>
+            
             <Navegacao caminho='login' icone='sign-in' titulo='Login'/>
             <Navegacao caminho='promocoes' icone='plane' titulo='Promoções'/>
             

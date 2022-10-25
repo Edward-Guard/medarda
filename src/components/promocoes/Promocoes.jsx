@@ -16,7 +16,7 @@ import './Promocoes.css'
 export default props =>
     <Main icon="plane" title="Promoções"
         subtitle="A mais rápida de Runeterra">
-        <div className="">
+        <div className="conteudo">
         <div className='row justify-content-center'>
             
             <Card img={Areias} titulo={'Surf nas areias'} texto={'Um esporte radical e instável das terras shurimanes'}/>
