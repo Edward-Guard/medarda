@@ -10,7 +10,7 @@ export default props =>
             <Navegacao caminho='login' icone='sign-in' titulo='Login'/>
             <Navegacao caminho='promocoes' icone='plane' titulo='Promoções'/>
             
-            <Navegacao caminho='cadastro' icone='info-circle' titulo='Ajuda'/>
+            <Navegacao caminho='viagens' icone='info-circle' titulo='Ajuda'/>
             <Navegacao caminho='viagens' icone='phone' titulo='Contato'/>
             
         </nav>

@@ -3,10 +3,14 @@ import Navegacao from "../template/Links";
 import Main from "../template/Main";
 import './Login.css'
 
-
+const headerProps = {
+    icon: 'sign-in',
+    title: 'Login',
+    subtitle: ''
+}
 
 export default props =>
-    <Main icon="sign-in" title="Login" subtitle="">
+    <Main {...headerProps}>
         <div className="form tela container text-center">
             <div className="container">
                 <div>

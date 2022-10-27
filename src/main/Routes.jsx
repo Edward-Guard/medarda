@@ -7,6 +7,7 @@ import Cadastro from "../components/viagens/CadastroViagens";
 import Login from "../components/login/Login";
 import Passagens from "../components/cadastro/Cadastro";
 
+
 export default props =>
 <Routes>
     <Route exact path="/" element={<Home />}/>
@@ -14,5 +15,6 @@ export default props =>
     <Route path="/login" element={<Login />}/>
     <Route path="/promocoes" element={<Promocoes />}/>
     <Route path="/cadastro" element={<Cadastro />}/>
+   
     <Route path="*" element={<Home />}/>
 </Routes>

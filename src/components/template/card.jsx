@@ -1,15 +1,23 @@
 import React from "react";
+import './Card.css'
 
 export default props =>
 
-    <div className="card  col-sm-5 col-md-3 col-lg-2 "  >
-        <img src={props.img} className="card-img-top" />
-        <div className="card-body">
-            <h5 className="card-title">{props.titulo}</h5>
-            <p className="card-text">{props.texto}</p>
-            <a href="/viagens" class="btn btn-primary text-white white" tabindex="-1" role="button" aria-disabled="true">Viajar</a>
-        </div>
-    </div>
+            <div className="container  col-12 col-md-4">
+                <div className={`cartao ${props.card} container  cont`}>
+                    
+                    <h1 className="title cont ">{props.titulo}</h1>
+                    
+                    <div className="botao ">
+                        <h2>G${props.texto}</h2>
+                        <div>Viagem ida e volta</div>
+                    <a class="btn btn-light" href="/viagens" role="button">Aproveite <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+    
 
 {/* <div class="card" style="width: 18rem;">
 <img src="..." class="card-img-top" alt="...">

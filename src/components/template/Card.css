@@ -1,0 +1,47 @@
+.cont{
+    display: grid;
+    justify-content: end;
+    color: white;
+    
+}
+
+.botao{
+    display: grid;
+    justify-content: end;
+    align-content: space-between;
+    align-content: flex-end;
+    padding: 10px;
+}
+
+.cartao{
+    background-size: auto 290px;
+    background-repeat: no-repeat;
+    height: 290px;
+    
+    
+    border-radius: 30px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    
+}
+
+.demacia{
+    background-image: url("../../assets/images/Demacia-promo.jpg");
+}
+.noxcraya{
+    background-image: url("../../assets/images/Noxkraya.png");
+}
+.freljord{
+    background-image: url("../../assets/images/fofuteia.webp");
+}
+.ionia{
+    background-image: url("../../assets/images/Hirana.webp");
+}
+.shurima{
+    background-image: url("../../assets/images/Areias.jpg");
+}
+.piltover{
+    background-image: url("../../assets/images/piltover.webp");
+}
+
+/* Nota mental: justify content só funciona com display flex ou grid */
