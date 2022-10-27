@@ -2,13 +2,6 @@ import React from "react";
 import Card from "../template/Card";
 import Main from "../template/Main";
 
-import Fofuteia from '../../assets/images/fofuteia.webp'
-import Hirana from '../../assets/images/Hirana.webp'
-
-import Portos from '../../assets/images/PortosSafiraRed.png'
-import Templo from '../../assets/images/TemploAurora.jpg'
-import Universidade from '../../assets/images/Universidade-de-Piltover.png'
-
 import './Promocoes.css'
 
 

@@ -11,7 +11,7 @@ export default props =>
                     <div className="botao ">
                         <h2>G${props.texto}</h2>
                         <div>Viagem ida e volta</div>
-                    <a class="btn btn-light" href="/viagens" role="button">Aproveite <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    <a className="btn btn-light" href="/viagens" role="button">Aproveite <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
