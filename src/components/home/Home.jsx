@@ -6,8 +6,8 @@ import './Home.css'
 
 
 export default props =>
-    <Main icon="home" title="Medarda"
-        subtitle="A mais rápida de Runeterra">
+    <Main icon="" title="Medarda"
+        subtitle="Viaje por todo Runeterra">
         <div className="p-1 container-flex"> 
             <CarouselHome />
         </div>
