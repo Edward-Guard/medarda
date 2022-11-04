@@ -5,7 +5,7 @@ import './CadastroViagens.css'
 
 const headerProps = {
     icon: 'plane',
-    title: 'Viagens',
+    title: 'Clientes',
     subtitle: 'Cadastro de viagens'
 }
 
