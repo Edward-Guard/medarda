@@ -6,7 +6,7 @@ import './Login.css'
 const headerProps = {
     icon: 'sign-in',
     title: 'Login',
-    subtitle: ''
+    subtitle: 'Seja Bem vindo'
 }
 
 export default props =>

@@ -186,7 +186,7 @@ export default class passagens extends Component{
             <div className="conteudo">   
                 {this.renderForm()}
                 {this.renderTable()}
-            </div>
+            </div>  
                 </Main>
             
             
